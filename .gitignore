@@ -1,0 +1,17 @@
+# Virtual environment
+venv/
+.venv/
+
+# Jupyter Notebook specific
+.ipynb_checkpoints/
+
+# Python specific
+*.pyc
+__pycache__/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE files (e.g., VS Code)
+.vscode/
