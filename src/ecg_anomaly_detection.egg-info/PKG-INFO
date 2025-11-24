@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: ecg-anomaly-detection
+Version: 0.0.0
+Summary: A small python package for detecting anomalies from ECG report
+Author-email: SarthakMogane <sarthakmogane1501@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/SarthakMogane/ECG-Anomaly-Detection
+Project-URL: BugTracker, https://github.com/SarthakMogane/ECG-Anomaly-Detection/issues
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
