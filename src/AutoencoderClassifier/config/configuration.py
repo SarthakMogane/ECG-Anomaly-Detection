@@ -20,13 +20,11 @@ class ConfigurationManager:
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config.data_ingestion
 
-        create_directories([config.root_dir])
-
         data_ingestion_config = DataIngestionConfig(
             root_dir=config.root_dir,
             source_URL=config.source_URL,
-            local_data_file=config.local_data_file,
-            unzip_dir=config.unzip_dir 
+            ptbdb_normal_data_path= config.ptbdb_normal_data_path ,
+            ptbdb_abnormal_data_path= config.ptbdb_abnormal_data_path
         )
 
         return data_ingestion_config

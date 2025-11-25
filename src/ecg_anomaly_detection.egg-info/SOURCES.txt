@@ -1,10 +1,12 @@
 pyproject.toml
 src/AutoencoderClassifier/__init__.py
+src/AutoencoderClassifier/exception.py
 src/AutoencoderClassifier/components/__init__.py
 src/AutoencoderClassifier/config/__init__.py
 src/AutoencoderClassifier/config/configuration.py
 src/AutoencoderClassifier/constants/__init__.py
 src/AutoencoderClassifier/entity/__init__.py
+src/AutoencoderClassifier/entity/config_entity.py
 src/AutoencoderClassifier/pipeline/__init__.py
 src/AutoencoderClassifier/utils/__init__.py
 src/AutoencoderClassifier/utils/common.py

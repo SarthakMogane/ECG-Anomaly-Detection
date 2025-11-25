@@ -6,8 +6,8 @@ from pathlib import Path
 class DataIngestionConfig:
     root_dir: Path
     source_URL: str
-    local_data_file: Path
-    unzip_dir: Path
+    ptbdb_normal_data_path: Path
+    ptbdb_abnormal_data_path : Path
 
 
 

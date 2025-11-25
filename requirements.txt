@@ -12,4 +12,5 @@ joblib
 types-PyYAML
 scipy
 gdown
+scikit-learn
 -e .

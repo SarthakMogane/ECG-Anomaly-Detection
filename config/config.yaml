@@ -4,9 +4,15 @@ artifacts_root: artifacts
 data_ingestion:
   root_dir: artifacts/data_ingestion
   source_URL: https://www.kaggle.com/datasets/shayanfazeli/heartbeat
-  local_data_file: artifacts/data_ingestion/data.zip
-  unzip_dir: artifacts/data_ingestion
+  ptbdb_normal_data_path: data/ptbdb_normal.csv
+  ptbdb_abnormal_data_path: data/ptbdb_abnormal.csv
 
+  
+
+data transformation:
+  train_data_path: artifacts/data_ingestion/train.csv
+  test_data_path: artifacts/data_ingestion/test.csv
+  abnormal_data_path: artifacts/data_ingestion/ptbdb_abnormal.csv
 
 prepare_base_model:
   root_dir: artifacts/prepare_base_model
