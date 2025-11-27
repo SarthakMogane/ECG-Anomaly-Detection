@@ -19,3 +19,15 @@ class PrepareBaseModelConfig:
     params_learning_rate: float
     params_latent_dimension: int
     
+@dataclass(frozen=True)
+class TrainingConfig:
+    root_dir:Path
+    trained_model_path: Path
+    base_model_path: Path
+    training_data : Path
+    params_epochs : int
+    params_batch_size : int
+    params_patience: int
+    params_min_delta: float
+    params_monitor: str
+    params_restore_best_weights: bool
