@@ -16,5 +16,5 @@ Thumbs.db
 # IDE files (e.g., VS Code)
 .vscode/
 
-.artifacts/
+artifacts/
 /data

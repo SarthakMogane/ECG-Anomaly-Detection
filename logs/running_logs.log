@@ -32,3 +32,68 @@ x==========x]
 [2025-11-24 23:56:04,167: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
 
 x==========x]
+[2025-11-27 11:48:41,002: INFO: stage_02_prepare_base_model: *******************]
+[2025-11-27 11:48:41,002: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2025-11-27 11:48:41,064: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 11:48:41,075: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 11:48:41,076: INFO: common: created directory at: artifacts]
+[2025-11-27 11:48:41,076: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-11-27 11:48:41,234: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-11-27 11:52:08,549: INFO: stage_02_prepare_base_model: *******************]
+[2025-11-27 11:52:08,549: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2025-11-27 11:52:08,552: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 11:52:08,552: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 11:52:08,552: INFO: common: created directory at: artifacts]
+[2025-11-27 11:52:08,552: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-11-27 11:52:08,708: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-11-27 12:28:41,613: INFO: stage_02_prepare_base_model: *******************]
+[2025-11-27 12:28:41,613: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2025-11-27 12:28:41,616: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 12:28:41,616: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 12:28:41,616: INFO: common: created directory at: artifacts]
+[2025-11-27 12:28:41,616: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-11-27 12:28:41,768: ERROR: stage_02_prepare_base_model: BuildModel.save_model() missing 1 required positional argument: 'model']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_02_prepare_base_model.py", line 27, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_02_prepare_base_model.py", line 17, in main
+    prepare_base_model.get_model()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_building.py", line 85, in get_model
+    self.save_model(model)
+TypeError: BuildModel.save_model() missing 1 required positional argument: 'model'
+[2025-11-27 12:29:48,628: INFO: stage_02_prepare_base_model: *******************]
+[2025-11-27 12:29:48,629: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2025-11-27 12:29:48,631: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 12:29:48,631: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 12:29:48,631: INFO: common: created directory at: artifacts]
+[2025-11-27 12:29:48,633: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-11-27 12:29:48,793: ERROR: stage_02_prepare_base_model: BuildModel.save_model() missing 1 required positional argument: 'self']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_02_prepare_base_model.py", line 27, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_02_prepare_base_model.py", line 17, in main
+    prepare_base_model.get_model()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_building.py", line 85, in get_model
+    self.save_model(model=model)
+TypeError: BuildModel.save_model() missing 1 required positional argument: 'self'
+[2025-11-27 12:30:24,477: INFO: stage_02_prepare_base_model: *******************]
+[2025-11-27 12:30:24,479: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2025-11-27 12:30:24,481: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 12:30:24,482: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 12:30:24,482: INFO: common: created directory at: artifacts]
+[2025-11-27 12:30:24,482: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-11-27 12:30:24,636: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2025-11-27 12:30:24,677: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-11-27 12:36:28,152: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-11-27 12:36:28,155: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 12:36:28,155: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 12:36:28,155: INFO: common: created directory at: artifacts]
+[2025-11-27 12:36:28,155: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
