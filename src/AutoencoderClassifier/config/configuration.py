@@ -1,7 +1,8 @@
 from AutoencoderClassifier.utils.common import read_yaml, create_directories,save_json
 
 from AutoencoderClassifier.entity.config_entity import (DataIngestionConfig,
-                                                PrepareBaseModelConfig)
+                                                PrepareBaseModelConfig,
+                                                TrainingConfig)
 
 from AutoencoderClassifier.constants import *
 class ConfigurationManager:
@@ -47,3 +48,25 @@ class ConfigurationManager:
         )
 
         return prepare_base_model_config
+    
+    def get_training_configs(self) -> TrainingConfig:
+        training_data = self.config.data_ingestion
+        base_model = self.config.prepare_base_model
+        training = self.config.training 
+
+        create_directories([training.root_dir])
+
+        prepare_training_configs= TrainingConfig(
+            root_dir=Path(training.root_dir),
+            trained_model_path= Path(training.trained_model_path),
+            base_model_path= Path(base_model.base_model_path),
+            training_data = Path(training_data.ptbdb_normal_data_path),
+            params_epochs = self.params.epochs,
+            params_batch_size = self.params.batch_size,
+            params_patience= self.params.patience,
+            params_min_delta= self.params.min_delta,
+            params_monitor= self.params.monitor,
+            params_restore_best_weights = self.params.restore_best_weights
+        )
+
+        return prepare_training_configs

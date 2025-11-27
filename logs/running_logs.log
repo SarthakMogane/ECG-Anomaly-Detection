@@ -97,3 +97,68 @@ x==========x]
 [2025-11-27 12:36:28,155: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
 
 x==========x]
+[2025-11-27 15:55:33,849: INFO: stage_03_model_training: *******************]
+[2025-11-27 15:55:33,849: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-11-27 15:55:33,859: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 15:55:33,868: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 15:55:33,868: INFO: common: created directory at: artifacts]
+[2025-11-27 15:55:33,868: ERROR: stage_03_model_training: 'ConfigurationManager' object has no attribute 'get_training_config']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_03_model_training.py", line 31, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_03_model_training.py", line 17, in main
+    training_config = config.get_training_config()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigurationManager' object has no attribute 'get_training_config'
+[2025-11-27 15:57:49,160: INFO: stage_03_model_training: *******************]
+[2025-11-27 15:57:49,161: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-11-27 15:57:49,163: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 15:57:49,164: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 15:57:49,164: INFO: common: created directory at: artifacts]
+[2025-11-27 15:57:49,165: INFO: common: created directory at: artifacts/training]
+[2025-11-27 15:57:49,166: ERROR: stage_03_model_training: module 'tensorflow.keras' has no attribute 'model']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_03_model_training.py", line 31, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_03_model_training.py", line 19, in main
+    training.get_base_model()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_training.py", line 71, in get_base_model
+    self.model = tf.keras.model.load_model(self.config.base_model_path,
+                 ^^^^^^^^^^^^^^
+AttributeError: module 'tensorflow.keras' has no attribute 'model'
+[2025-11-27 16:34:36,610: INFO: stage_03_model_training: *******************]
+[2025-11-27 16:34:36,611: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-11-27 16:34:36,612: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 16:34:36,613: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 16:34:36,614: INFO: common: created directory at: artifacts]
+[2025-11-27 16:34:36,614: INFO: common: created directory at: artifacts/training]
+[2025-11-27 16:34:36,614: ERROR: stage_03_model_training: File not found: filepath=artifacts\prepare_base_model\base_model.keras. Please ensure the file is an accessible `.keras` zip file.]
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_03_model_training.py", line 31, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_03_model_training.py", line 19, in main
+    training.get_base_model()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_training.py", line 71, in get_base_model
+    self.model = tf.keras.models.load_model(self.config.base_model_path,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\saving\saving_api.py", line 203, in load_model
+    raise ValueError(
+ValueError: File not found: filepath=artifacts\prepare_base_model\base_model.keras. Please ensure the file is an accessible `.keras` zip file.
+[2025-11-27 16:35:43,423: INFO: stage_02_prepare_base_model: *******************]
+[2025-11-27 16:35:43,423: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2025-11-27 16:35:43,424: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 16:35:43,425: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 16:35:43,426: INFO: common: created directory at: artifacts]
+[2025-11-27 16:35:43,426: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-11-27 16:35:43,811: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-11-27 16:35:58,455: INFO: stage_03_model_training: *******************]
+[2025-11-27 16:35:58,455: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-11-27 16:35:58,458: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-27 16:35:58,458: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-27 16:35:58,458: INFO: common: created directory at: artifacts]
+[2025-11-27 16:35:58,459: INFO: common: created directory at: artifacts/training]
+[2025-11-27 16:37:23,239: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
