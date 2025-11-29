@@ -19,7 +19,8 @@ class ModelTrainingPipeline:
         training.get_base_model()
         training.get_data()
         training.split_data()
-        training.fit_model()
+        history =training.fit_model()
+        return history
 
 
 

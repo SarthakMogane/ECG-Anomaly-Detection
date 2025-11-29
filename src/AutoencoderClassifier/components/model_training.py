@@ -83,6 +83,8 @@ class Training:
         data = self.data.to_numpy()
         self.X_train, self.X_test = train_test_split(data, test_size=0.15, random_state=45, shuffle=True)
         print(f"Train shape: {self.X_train.shape}, Test shape: {self.X_test.shape}")
+        self.save_data(self.config.X_train_path,self.X_train)
+        self.save_data(self.config.X_test_path,self.X_test)
         
     def fit_model(self):
         epochs = 100
@@ -97,7 +99,10 @@ class Training:
         self.model.summary()
 
         return history
-        
+
+    @staticmethod
+    def save_data(path,data):
+        np.save(path,data)
     @staticmethod
     def save_model(self, model: tf.keras.Model):
             """

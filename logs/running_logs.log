@@ -162,3 +162,559 @@ x==========x]
 [2025-11-27 16:37:23,239: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
 
 x==========x]
+[2025-11-28 13:48:54,894: INFO: stage_03_model_training: *******************]
+[2025-11-28 13:48:54,894: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-11-28 13:48:54,905: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 13:48:54,913: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 13:48:54,913: INFO: common: created directory at: artifacts]
+[2025-11-28 13:48:54,913: INFO: common: created directory at: artifacts/training]
+[2025-11-28 13:48:54,918: ERROR: stage_03_model_training: "'ConfigBox' object has no attribute 'x_test_path'"]
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'X_test_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'X_test_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'X_test_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'X_test_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'x_test_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'x_test_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'x_test_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_03_model_training.py", line 32, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_03_model_training.py", line 17, in main
+    training_config = config.get_training_configs()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\config\configuration.py", line 66, in get_training_configs
+    X_test_path = Path(training_data.X_test_path),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'x_test_path'"
+[2025-11-28 13:50:09,263: INFO: stage_03_model_training: *******************]
+[2025-11-28 13:50:09,263: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-11-28 13:50:09,312: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 13:50:09,313: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 13:50:09,314: INFO: common: created directory at: artifacts]
+[2025-11-28 13:50:09,315: INFO: common: created directory at: artifacts/training]
+[2025-11-28 13:50:09,755: ERROR: stage_03_model_training: [Errno 2] No such file or directory: 'artifacts\\data_ingestion\\X_train.npy']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_03_model_training.py", line 32, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_03_model_training.py", line 21, in main
+    training.split_data()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_training.py", line 86, in split_data
+    self.save_data(self.config.X_train_path,self.X_train)
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_training.py", line 105, in save_data
+    np.save(path,data)
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\numpy\lib\_npyio_impl.py", line 580, in save
+    file_ctx = open(file, "wb")
+               ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\data_ingestion\\X_train.npy'
+[2025-11-28 13:53:09,942: INFO: stage_03_model_training: *******************]
+[2025-11-28 13:53:09,942: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-11-28 13:53:09,944: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 13:53:09,944: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 13:53:09,946: INFO: common: created directory at: artifacts]
+[2025-11-28 13:53:09,946: INFO: common: created directory at: artifacts/training]
+[2025-11-28 13:53:09,946: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 13:55:06,711: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-11-28 15:58:12,058: INFO: stage_04_model_evaluation: *******************]
+[2025-11-28 15:58:12,058: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-28 15:58:12,129: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 15:58:12,131: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 15:58:12,132: INFO: common: created directory at: artifacts]
+[2025-11-28 15:58:12,133: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 15:58:12,134: ERROR: stage_04_model_evaluation: "'ConfigBox' object has no attribute 'ptbdb_noraml_path'"]
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ptbdb_noraml_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ptbdb_noraml_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'ptbdb_noraml_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'ptbdb_noraml_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ptbdb_noraml_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ptbdb_noraml_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'ptbdb_noraml_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 28, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 17, in main
+    evaluation_config = config.get_evaluation_config()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\config\configuration.py", line 89, in get_evaluation_config
+    training_data=Path(training_data.ptbdb_noraml_path),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'ptbdb_noraml_path'"
+[2025-11-28 16:00:11,354: INFO: stage_04_model_evaluation: *******************]
+[2025-11-28 16:00:11,354: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-28 16:00:11,357: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 16:00:11,357: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 16:00:11,357: INFO: common: created directory at: artifacts]
+[2025-11-28 16:00:11,358: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 16:00:11,358: ERROR: stage_04_model_evaluation: "'ConfigBox' object has no attribute 'ptbdb_noraml_path'"]
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ptbdb_noraml_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ptbdb_noraml_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'ptbdb_noraml_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'ptbdb_noraml_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ptbdb_noraml_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ptbdb_noraml_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'ptbdb_noraml_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 28, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 17, in main
+    evaluation_config = config.get_evaluation_config()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\config\configuration.py", line 89, in get_evaluation_config
+    training_data=Path(training_data.ptbdb_noraml_path),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'ptbdb_noraml_path'"
+[2025-11-28 16:03:19,727: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 16:04:42,218: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 16:05:42,135: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 16:37:01,500: INFO: stage_04_model_evaluation: *******************]
+[2025-11-28 16:37:01,500: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-28 16:37:01,503: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 16:37:01,504: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 16:37:01,504: INFO: common: created directory at: artifacts]
+[2025-11-28 16:37:01,505: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 16:37:01,505: ERROR: stage_04_model_evaluation: "'ConfigBox' object has no attribute 'ptbdb_noraml_data_path'"]
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ptbdb_noraml_data_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ptbdb_noraml_data_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'ptbdb_noraml_data_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'ptbdb_noraml_data_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ptbdb_noraml_data_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ptbdb_noraml_data_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'ptbdb_noraml_data_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 28, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 17, in main
+    evaluation_config = config.get_evaluation_config()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\config\configuration.py", line 89, in get_evaluation_config
+    training_data=Path(training_data.ptbdb_noraml_data_path),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'ptbdb_noraml_data_path'"
+[2025-11-28 16:39:23,991: INFO: stage_04_model_evaluation: *******************]
+[2025-11-28 16:39:23,991: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-28 16:39:23,994: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 16:39:23,994: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 16:39:23,994: INFO: common: created directory at: artifacts]
+[2025-11-28 16:39:23,994: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 16:39:25,417: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 16:39:26,897: ERROR: stage_04_model_evaluation: API request to endpoint /api/2.0/mlflow/experiments/get-by-name failed with error code 404 != 200. Response body: '']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 28, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 19, in main
+    evaluator.run_evaluation()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_evaluation.py", line 76, in run_evaluation
+    mlflow.set_experiment("ecg_anomaly_detection")
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\tracking\fluent.py", line 157, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\tracking\client.py", line 1703, in get_experiment_by_name
+    return self._tracking_client.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 595, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\store\tracking\rest_store.py", line 641, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\store\tracking\rest_store.py", line 90, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\utils\rest_utils.py", line 402, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\utils\rest_utils.py", line 265, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/experiments/get-by-name failed with error code 404 != 200. Response body: ''
+[2025-11-28 16:53:49,640: INFO: stage_04_model_evaluation: *******************]
+[2025-11-28 16:53:49,641: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-28 16:53:49,643: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 16:53:49,644: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 16:53:49,645: INFO: common: created directory at: artifacts]
+[2025-11-28 16:53:49,646: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 16:53:51,431: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 16:53:53,489: ERROR: stage_04_model_evaluation: API request to endpoint /api/2.0/mlflow/experiments/get-by-name failed with error code 404 != 200. Response body: '']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 28, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 19, in main
+    evaluator.run_evaluation()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_evaluation.py", line 77, in run_evaluation
+    mlflow.set_experiment("ecg_anomaly_detection")
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\tracking\fluent.py", line 157, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\tracking\client.py", line 1703, in get_experiment_by_name
+    return self._tracking_client.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 595, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\store\tracking\rest_store.py", line 641, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\store\tracking\rest_store.py", line 90, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\utils\rest_utils.py", line 402, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\utils\rest_utils.py", line 265, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/experiments/get-by-name failed with error code 404 != 200. Response body: ''
+[2025-11-28 16:56:04,823: INFO: stage_04_model_evaluation: *******************]
+[2025-11-28 16:56:04,823: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-28 16:56:04,826: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 16:56:04,826: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 16:56:04,826: INFO: common: created directory at: artifacts]
+[2025-11-28 16:56:04,828: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 16:56:06,753: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 16:56:08,559: ERROR: stage_04_model_evaluation: API request to endpoint /api/2.0/mlflow/experiments/get-by-name failed with error code 404 != 200. Response body: '']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 30, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 21, in main
+    evaluator.run_evaluation()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_evaluation.py", line 77, in run_evaluation
+    mlflow.set_experiment("ecg_anomaly_detection")
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\tracking\fluent.py", line 157, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\tracking\client.py", line 1703, in get_experiment_by_name
+    return self._tracking_client.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 595, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\store\tracking\rest_store.py", line 641, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\store\tracking\rest_store.py", line 90, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\utils\rest_utils.py", line 402, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\mlflow\utils\rest_utils.py", line 265, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/experiments/get-by-name failed with error code 404 != 200. Response body: ''
+[2025-11-28 16:58:25,606: INFO: stage_04_model_evaluation: *******************]
+[2025-11-28 16:58:25,606: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-28 16:58:25,609: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 16:58:25,610: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 16:58:25,611: INFO: common: created directory at: artifacts]
+[2025-11-28 16:58:25,611: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 16:58:28,533: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 16:58:35,696: ERROR: stage_04_model_evaluation: log_param() missing 1 required positional argument: 'value']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 30, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 21, in main
+    evaluator.run_evaluation()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_evaluation.py", line 89, in run_evaluation
+    mlflow.log_param(self.config.all_params)
+TypeError: log_param() missing 1 required positional argument: 'value'
+[2025-11-28 17:07:22,227: INFO: stage_04_model_evaluation: *******************]
+[2025-11-28 17:07:22,227: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-28 17:07:22,230: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 17:07:22,231: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 17:07:22,231: INFO: common: created directory at: artifacts]
+[2025-11-28 17:07:22,232: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 17:07:24,183: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 17:07:27,690: ERROR: stage_04_model_evaluation: log_param() missing 1 required positional argument: 'value']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 30, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 21, in main
+    evaluator.run_evaluation()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_evaluation.py", line 89, in run_evaluation
+    mlflow.log_param(self.config.all_params)
+TypeError: log_param() missing 1 required positional argument: 'value'
+[2025-11-28 17:15:24,555: INFO: stage_04_model_evaluation: *******************]
+[2025-11-28 17:15:24,556: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-28 17:15:24,558: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 17:15:24,560: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 17:15:24,560: INFO: common: created directory at: artifacts]
+[2025-11-28 17:15:24,560: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 17:15:26,455: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 17:15:29,721: ERROR: stage_04_model_evaluation: log_param() missing 1 required positional argument: 'value']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 30, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 21, in main
+    evaluator.run_evaluation()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_evaluation.py", line 89, in run_evaluation
+    mlflow.log_param(self.config.all_params)
+TypeError: log_param() missing 1 required positional argument: 'value'
+[2025-11-28 17:23:04,624: INFO: stage_04_model_evaluation: *******************]
+[2025-11-28 17:23:04,625: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-28 17:23:04,627: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-28 17:23:04,629: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-28 17:23:04,630: INFO: common: created directory at: artifacts]
+[2025-11-28 17:23:04,630: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-28 17:23:06,563: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 17:23:10,049: ERROR: stage_04_model_evaluation: log_param() missing 1 required positional argument: 'value']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 30, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 21, in main
+    evaluator.run_evaluation()
+  File "D:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\components\model_evaluation.py", line 100, in run_evaluation
+    mlflow.log_param(flat_params)
+TypeError: log_param() missing 1 required positional argument: 'value'
+[2025-11-28 17:28:01,780: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 17:42:33,505: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-28 17:43:03,144: INFO: common: json file saved at: artifacts\metrics\metrics.json]

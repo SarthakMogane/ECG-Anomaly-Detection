@@ -2,7 +2,8 @@ from AutoencoderClassifier.utils.common import read_yaml, create_directories,sav
 
 from AutoencoderClassifier.entity.config_entity import (DataIngestionConfig,
                                                 PrepareBaseModelConfig,
-                                                TrainingConfig)
+                                                TrainingConfig,
+                                                EvaluationConfig)
 
 from AutoencoderClassifier.constants import *
 class ConfigurationManager:
@@ -12,7 +13,12 @@ class ConfigurationManager:
         params_filepath = PARAMS_FILE_PATH):
 
         self.config = read_yaml(config_filepath)
+        print(type(self.config))
+
         self.params = read_yaml(params_filepath)
+        print(type(self.params))
+        print(self.params)
+
 
         create_directories([self.config.artifacts_root])
 
@@ -55,12 +61,15 @@ class ConfigurationManager:
         training = self.config.training 
 
         create_directories([training.root_dir])
+        create_directories([training_data.root_dir])
 
         prepare_training_configs= TrainingConfig(
             root_dir=Path(training.root_dir),
             trained_model_path= Path(training.trained_model_path),
             base_model_path= Path(base_model.base_model_path),
             training_data = Path(training_data.ptbdb_normal_data_path),
+            X_train_path = Path(training_data.X_train_path),
+            X_test_path = Path(training_data.X_test_path),
             params_epochs = self.params.epochs,
             params_batch_size = self.params.batch_size,
             params_patience= self.params.patience,
@@ -70,3 +79,24 @@ class ConfigurationManager:
         )
 
         return prepare_training_configs
+    
+    def get_evaluation_config(self) -> EvaluationConfig:
+        training_data = self.config.data_ingestion
+        training = self.config.training 
+        evaluation = self.config.evaluation
+
+        create_directories([training_data.root_dir])
+
+
+        eval_config = EvaluationConfig(
+            root_dir=Path(evaluation.root_dir),
+            trained_model_path=Path(training.trained_model_path),
+            training_data=Path(training_data.ptbdb_normal_data_path),
+            evaluation_data=Path(training_data.ptbdb_abnormal_data_path),
+            anomaly_path = Path(training_data.anomaly_path),
+            X_train_path = Path(training_data.X_train_path),
+            X_test_path = Path(training_data.X_test_path),
+            all_params =self.params.to_dict(),
+            ml_flow_URI=str(evaluation.ml_flow_URI)
+        )
+        return eval_config

@@ -6,6 +6,9 @@ data_ingestion:
   source_URL: https://www.kaggle.com/datasets/shayanfazeli/heartbeat
   ptbdb_normal_data_path: data/ptbdb_normal.csv
   ptbdb_abnormal_data_path: data/ptbdb_abnormal.csv
+  X_train_path: artifacts/data_ingestion/X_train.npy
+  X_test_path: artifacts/data_ingestion/X_test.npy
+  anomaly_path: artifacts/data_ingestion/anomaly.npy
 
 prepare_base_model:
   root_dir: artifacts/prepare_base_model
@@ -15,3 +18,7 @@ prepare_base_model:
 training:
   root_dir: artifacts/training
   trained_model_path: artifacts/training/model.keras
+
+evaluation:
+  root_dir: artifacts/evaluation
+  ml_flow_URI: https://dagshub.com/SarthakMogane/ECG-Anomaly-Detection.mlflow
