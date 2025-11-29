@@ -70,20 +70,24 @@ class BuildModel():
         self.config= config
 
     def get_model(self) -> tf.keras.Model:
-        model = AutoEncoder(
-            input_dim=self.config.params_input_dimension,
-            latent_dim=self.config.params_latent_dimension,
-        )
-         
-        model.compile(
-            optimizer=tf.keras.optimizers.Adam(
-                learning_rate=self.config.params_learning_rate
-            ),
-            loss="mae"
-        )
-       
-        self.save_model(self,model=model)
-    
+        try:
+            model = AutoEncoder(
+                input_dim=self.config.params_input_dimension,
+                latent_dim=self.config.params_latent_dimension,
+            )
+            
+            model.compile(
+                optimizer=tf.keras.optimizers.Adam(
+                    learning_rate=self.config.params_learning_rate
+                ),
+                loss="mae"
+            )
+        
+            self.save_model(self,model=model)
+            
+        except Exception as e:
+            raise CustomException(e,sys)
+        
     @staticmethod
     def save_model(self, model: tf.keras.Model):
             """

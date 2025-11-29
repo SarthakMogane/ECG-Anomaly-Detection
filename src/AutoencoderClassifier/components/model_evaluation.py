@@ -8,6 +8,8 @@ from AutoencoderClassifier.exception import CustomException
 import tensorflow as tf
 from tensorflow import data
 from tensorflow.keras.metrics import mae
+import sys
+from AutoencoderClassifier.exception import CustomException
 
 import pandas as pd
 import numpy as np
@@ -28,21 +30,28 @@ class Evaluation():
         self.config = config
 
     def load_datasets(self):
+
         # TODO: replace with your real loading logic
         # X_train, X_test, anomaly must be numpy arrays of shape (n_samples, 187)
-        X_train = np.load(self.config.X_train_path)
-        X_test  = np.load(self.config.X_test_path)
-        
-        path_str =str(self.config.evaluation_data)
+        try:
+            X_train = np.load(self.config.X_train_path)
+            X_test  = np.load(self.config.X_test_path)
+            
+            path_str =str(self.config.evaluation_data)
 
-        self.data = pd.read_csv(
-            path_str,
-            header=None ).iloc[:, :-1]
-        
-        anomaly = self.data.to_numpy()
-        self.save_data(self.config.anomaly_path,anomaly)
+            self.data = pd.read_csv(
+                path_str,
+                header=None ).iloc[:, :-1]
+            
+            anomaly = self.data.to_numpy()
+            self.save_data(self.config.anomaly_path,anomaly)
 
-        return X_train, X_test, anomaly
+            return X_train, X_test, anomaly
+        
+        except Exception as e:
+            raise CustomException(e,sys)
+        
+        
 
     @staticmethod
     def save_data(path,data):

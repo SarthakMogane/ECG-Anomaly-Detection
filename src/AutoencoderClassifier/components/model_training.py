@@ -9,6 +9,8 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
 from AutoencoderClassifier.entity.config_entity import TrainingConfig
+import sys
+from AutoencoderClassifier.exception import CustomException
 
 class AutoEncoder(Model):
     def __init__(self, input_dim, latent_dim, **kwargs):
@@ -68,37 +70,50 @@ class Training:
         self.config = config
 
     def get_base_model(self):
-        self.model = tf.keras.models.load_model(self.config.base_model_path,
-        custom_objects={'AutoEncoder': AutoEncoder})
-    
+        try:
+            self.model = tf.keras.models.load_model(self.config.base_model_path,
+            custom_objects={'AutoEncoder': AutoEncoder})
+        except Exception as e:
+            raise CustomException(e,sys)
     def get_data(self):
-        path_str =str(self.config.training_data)
+        try:
+            path_str =str(self.config.training_data)
 
-        self.data = pd.read_csv(
-        path_str,
-        header=None ).iloc[:, :-1]
-        
+            self.data = pd.read_csv(
+            path_str,
+            header=None ).iloc[:, :-1]
+
+        except Exception as e:
+            raise CustomException(e,sys)
+            
 
     def split_data(self):
-        data = self.data.to_numpy()
-        self.X_train, self.X_test = train_test_split(data, test_size=0.15, random_state=45, shuffle=True)
-        print(f"Train shape: {self.X_train.shape}, Test shape: {self.X_test.shape}")
-        self.save_data(self.config.X_train_path,self.X_train)
-        self.save_data(self.config.X_test_path,self.X_test)
+        try:
+            data = self.data.to_numpy()
+            self.X_train, self.X_test = train_test_split(data, test_size=0.15, random_state=45, shuffle=True)
+            print(f"Train shape: {self.X_train.shape}, Test shape: {self.X_test.shape}")
+            self.save_data(self.config.X_train_path,self.X_train)
+            self.save_data(self.config.X_test_path,self.X_test)
+        except Exception as e:
+            raise CustomException(e,sys)
         
     def fit_model(self):
-        epochs = 100
-        batch_size = 128
-        early_stopping = EarlyStopping(patience=10, min_delta=1e-3, monitor="val_loss", restore_best_weights=True)
+        try:
+            epochs = 100
+            batch_size = 128
+            early_stopping = EarlyStopping(patience=10, min_delta=1e-3, monitor="val_loss", restore_best_weights=True)
 
 
-        history = self.model.fit(self.X_train, self.X_train, epochs=epochs, batch_size=batch_size,
-                            validation_split=0.1, callbacks=[early_stopping])
+            history = self.model.fit(self.X_train, self.X_train, epochs=epochs, batch_size=batch_size,
+                                validation_split=0.1, callbacks=[early_stopping])
+            
+            self.save_model(self,model=self.model)
+            self.model.summary()
+
+            return history
         
-        self.save_model(self,model=self.model)
-        self.model.summary()
-
-        return history
+        except Exception as e:
+            raise CustomException(e,sys)
 
     @staticmethod
     def save_data(path,data):
@@ -108,7 +123,10 @@ class Training:
             """
             Saves model to the configured path.
             """
-            model_path = self.config.trained_model_path
-            
-            model.save(model_path)     # saves full model (architecture + weights + optimizer)
-            print(f"✅ Model saved at: {model_path}")
+            try:
+                model_path = self.config.trained_model_path
+                
+                model.save(model_path)     # saves full model (architecture + weights + optimizer)
+                print(f"✅ Model saved at: {model_path}")
+            except Exception as e:
+                raise CustomException(e,sys)
