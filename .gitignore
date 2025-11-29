@@ -19,3 +19,4 @@ Thumbs.db
 artifacts/
 /data
 .env
+mlruns/

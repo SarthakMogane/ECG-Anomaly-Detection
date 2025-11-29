@@ -718,3 +718,50 @@ TypeError: log_param() missing 1 required positional argument: 'value'
 [2025-11-28 17:42:33,505: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
 ]
 [2025-11-28 17:43:03,144: INFO: common: json file saved at: artifacts\metrics\metrics.json]
+[2025-11-29 11:40:02,673: INFO: stage_04_model_evaluation: *******************]
+[2025-11-29 11:40:02,673: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-29 11:40:02,675: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-29 11:40:02,677: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-29 11:40:02,678: INFO: common: created directory at: artifacts]
+[2025-11-29 11:40:02,678: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-29 11:40:04,000: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-29 11:40:38,747: INFO: common: json file saved at: artifacts\metrics\metrics.json]
+[2025-11-29 11:40:39,329: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation completed <<<<<<
+
+x==========x]
+[2025-11-29 13:26:20,545: INFO: stage_04_model_evaluation: *******************]
+[2025-11-29 13:26:20,546: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-29 13:26:20,557: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-29 13:26:20,566: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-29 13:26:20,567: INFO: common: created directory at: artifacts]
+[2025-11-29 13:26:20,567: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-29 13:26:20,568: ERROR: stage_04_model_evaluation: 'Evaluation' object has no attribute 'run_evaluation']
+Traceback (most recent call last):
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 30, in <module>
+    obj.main()
+  File "d:\PythonProject\ecg_anomaly_detection\src\AutoencoderClassifier\pipeline\stage_04_model_evaluation.py", line 21, in main
+    evaluator.run_evaluation()
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Evaluation' object has no attribute 'run_evaluation'
+[2025-11-29 13:27:55,488: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-29 13:28:24,562: INFO: common: json file saved at: artifacts\metrics\metrics.json]
+[2025-11-29 13:35:22,087: INFO: stage_04_model_evaluation: *******************]
+[2025-11-29 13:35:22,087: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation started <<<<<<]
+[2025-11-29 13:35:22,140: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-11-29 13:35:22,143: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-11-29 13:35:22,144: INFO: common: created directory at: artifacts]
+[2025-11-29 13:35:22,144: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-11-29 13:35:22,197: WARNING: connectionpool: Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000023DCAC5FC90>: Failed to resolve 'dagshub.com' ([Errno 11001] getaddrinfo failed)")': /SarthakMogane/ECG-Anomaly-Detection.mlflow/api/2.0/mlflow/experiments/get-by-name?experiment_name=ecg_anomaly_detection]
+[2025-11-29 13:35:26,807: WARNING: connectionpool: Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000023DCAC4A050>: Failed to resolve 'dagshub.com' ([Errno 11001] getaddrinfo failed)")': /SarthakMogane/ECG-Anomaly-Detection.mlflow/api/2.0/mlflow/experiments/get-by-name?experiment_name=ecg_anomaly_detection]
+[2025-11-29 13:35:35,205: WARNING: connectionpool: Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000023DCAC4BA50>: Failed to resolve 'dagshub.com' ([Errno 11001] getaddrinfo failed)")': /SarthakMogane/ECG-Anomaly-Detection.mlflow/api/2.0/mlflow/experiments/get-by-name?experiment_name=ecg_anomaly_detection]
+[2025-11-29 13:35:54,880: WARNING: connectionpool: Retrying (Retry(total=3, connect=3, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000023DCAC42CD0>: Failed to resolve 'dagshub.com' ([Errno 11001] getaddrinfo failed)")': /SarthakMogane/ECG-Anomaly-Detection.mlflow/api/2.0/mlflow/experiments/get-by-name?experiment_name=ecg_anomaly_detection]
+[2025-11-29 13:36:38,093: WARNING: connectionpool: Retrying (Retry(total=2, connect=2, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000023DCAC43AD0>: Failed to resolve 'dagshub.com' ([Errno 11001] getaddrinfo failed)")': /SarthakMogane/ECG-Anomaly-Detection.mlflow/api/2.0/mlflow/experiments/get-by-name?experiment_name=ecg_anomaly_detection]
+[2025-11-29 13:37:42,154: WARNING: connectionpool: Retrying (Retry(total=1, connect=1, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000023DCAC40510>: Failed to resolve 'dagshub.com' ([Errno 11001] getaddrinfo failed)")': /SarthakMogane/ECG-Anomaly-Detection.mlflow/api/2.0/mlflow/experiments/get-by-name?experiment_name=ecg_anomaly_detection]
+[2025-11-29 13:37:47,092: WARNING: module_wrapper: From D:\PythonProject\ecg_anomaly_detection\venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+]
+[2025-11-29 13:38:49,898: INFO: common: json file saved at: artifacts\metrics\metrics.json]
+[2025-11-29 13:38:50,523: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation completed <<<<<<
+
+x==========x]

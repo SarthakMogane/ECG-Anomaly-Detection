@@ -22,3 +22,4 @@ training:
 evaluation:
   root_dir: artifacts/evaluation
   ml_flow_URI: https://dagshub.com/SarthakMogane/ECG-Anomaly-Detection.mlflow
+  threshold_percentage: [90, 92, 95, 97, 99]

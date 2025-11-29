@@ -44,4 +44,5 @@ class EvaluationConfig:
     X_train_path :Path
     X_test_path :Path
     all_params: dict
+    threshold_percentile:list
     ml_flow_URI:str

@@ -97,6 +97,7 @@ class ConfigurationManager:
             X_train_path = Path(training_data.X_train_path),
             X_test_path = Path(training_data.X_test_path),
             all_params =self.params.to_dict(),
-            ml_flow_URI=str(evaluation.ml_flow_URI)
+            ml_flow_URI=str(evaluation.ml_flow_URI),
+            threshold_percentile=list(evaluation.threshold_percentage)
         )
         return eval_config
